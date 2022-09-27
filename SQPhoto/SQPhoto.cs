@@ -114,7 +114,7 @@ namespace SQPhoto
         }
 
         private int _ZoomMin = 100;
-        [Category("自定义"), Browsable(true), Description("可缩放的做小大小")]
+        [Category("自定义"), Browsable(true), Description("可缩放的最小大小")]
         public int ZoomMin
         {
             get
