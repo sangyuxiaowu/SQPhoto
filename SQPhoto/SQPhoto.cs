@@ -248,9 +248,19 @@ namespace SQPhoto
         private void PicBox_MouseWheel(object sender, MouseEventArgs e)
         {
             if (!_CanZoom) return;
+            PicZoomSize(e.Delta);
+        }
+
+        /// <summary>
+        /// 控制图片缩放
+        /// </summary>
+        /// <param name="change">变化情况，大于 0 放大，小于 0 缩小</param>
+        public void PicZoomSize(int change)
+        {
             var t = PicBox.Size;
-            t.Width += e.Delta;
-            t.Height += e.Delta;
+            t.Width += change;
+            t.Height += change;
+
             //控制最小缩放
             if (t.Width < _ZoomMin) return;
             PicBox.Size = t;
