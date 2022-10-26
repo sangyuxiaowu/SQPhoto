@@ -163,8 +163,6 @@ namespace SQPhoto
             if (e.Button == MouseButtons.Left)
             {
                 mouseDownPoint = Cursor.Position;
-                //mouseDownPoint.X = Cursor.Position.X;  //注：全局变量mouseDownPoint前面已定义为Point类型
-                //mouseDownPoint.Y = Cursor.Position.Y;
                 isSelected = true;
             }
         }
@@ -199,10 +197,6 @@ namespace SQPhoto
             if (_CanMove && isSelected && IsMouseInPanel())
             {
                 PicBox.Location = new Point(PicBox.Left + (Cursor.Position.X - mouseDownPoint.X), PicBox.Top + (Cursor.Position.Y - mouseDownPoint.Y));
-                //this.PicBox.Left = this.PicBox.Left + (Cursor.Position.X - mouseDownPoint.X);
-                //this.PicBox.Top = this.PicBox.Top + (Cursor.Position.Y - mouseDownPoint.Y);
-                //mouseDownPoint.X = Cursor.Position.X;
-                //mouseDownPoint.Y = Cursor.Position.Y;
                 mouseDownPoint = Cursor.Position;
             }
         }
@@ -216,35 +210,7 @@ namespace SQPhoto
         {
             isSelected = false;
         }
-        /*
-        /// <summary>
-        ///  将图片限制在容器中
-        /// </summary>
-        /// <param name="picBox"></param>
-        /// <param name="mouseDownPoint"></param>
-        public static void PicMoveNotOut(PictureBox picBox, Point mouseDownPoint)
-        {
-            int right, bottom;
 
-            int differentX = Cursor.Position.X - mouseDownPoint.X;
-            int differentY = Cursor.Position.Y - mouseDownPoint.Y;
-
-            int want2Lef = picBox.Left + differentX;
-            int want2Top = picBox.Top + differentY;
-
-            right = picBox.Parent.Width - (picBox.Right + differentX);
-            bottom = picBox.Parent.Height - (picBox.Bottom + differentY);
-
-            if (want2Lef > 0) want2Lef = picBox.Left;
-            if (want2Top > 0) want2Top = picBox.Top;
-            if (right > 0 && differentX < 0) want2Lef = picBox.Left;
-            if (bottom > 0 && differentY < 0) want2Top = picBox.Top;
-
-            picBox.Left = want2Lef;
-            picBox.Top = want2Top;
-
-        }
-        */
         private void PicBox_MouseWheel(object sender, MouseEventArgs e)
         {
             if (!_CanZoom) return;
