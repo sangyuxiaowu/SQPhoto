@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFrameworks Condition="'$(LibraryFrameworks)'==''">net6.0-windows;net46</TargetFrameworks>
+	  <TargetFrameworks Condition="'$(LibraryFrameworks)'==''">net6.0-windows;net8.0-windows;;net46</TargetFrameworks>
 	  <TargetFrameworks Condition="'$(LibraryFrameworks)'!=''">$(LibraryFrameworks)</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
 	<ImplicitUsings>enable</ImplicitUsings>
 	<LangVersion>latest</LangVersion>
 	<Nullable>enable</Nullable>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
 	<Authors>SangSQ(桑世强)</Authors>
 	<Description>A windows forms control, Picture display tool based on PictureBox, adding drag and zoom functions</Description>
 	<PackageProjectUrl>https://github.com/sangyuxiaowu/SQPhoto</PackageProjectUrl>
